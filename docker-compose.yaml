@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  digitalworldapp:
+    depends_on:
+      - db
+    build: 
+      context: .
+      dockerfile: DockerFile
+    image: digiworld-docker
+    container_name: digitalworldapp
+    restart: always # reiniciar el contenedor si se detiene
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      MONGODB: ${MONGODB}
+      PORT: ${PORT}
+  db:
+    image: mongo:5
+    container_name: mongo-digiworld
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_DATABASE: nest-digi-world
+    volumes:
+      - ./mongo:/data/db
