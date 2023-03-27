@@ -44,10 +44,9 @@ export class TravelService {
 
   async finish(finishTavelDto: FinishTavelDto) {
     try {
-      const driver = await this.driverModel.findOne({ _id: finishTavelDto.driver })
+      const driver = await this.driverModel.findById(finishTavelDto.driver);
       if (!driver) return 'Conductor no registrado no se puede finalizar el viaje'
-      console.log(driver._id)
-      const travel = await this.travelModule.findOne({ state: 'SOLICITADO', user: driver._id })
+      const travel = await this.travelModule.findOne({ state: 'SOLICITADO', driver: driver._id })
       if( !travel ) return 'El conducor no tiene ningun viaje registrado'
       const distance = getDistance(finishTavelDto.end[0], finishTavelDto.end[1], travel.end[0], travel.end[1])
       console.log(distance)

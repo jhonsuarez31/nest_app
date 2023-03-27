@@ -30,6 +30,6 @@ export class FinishTavelDto{
   @IsArray()
   end: [number, number];
 
-  @IsInt()
+  @IsMongoId()
   driver: ObjectId;
 }
