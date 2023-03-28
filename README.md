@@ -65,17 +65,23 @@ $ docker-compose up -d
 ```
 
 ## Stack 
--Mongo
--Nest
+- Mongo
+- Nest
 
 ## Stack 
 ## Production Build
-Crear el archivo .env.prod
-Llenar las variables de entorno de prod
-Crear la nueva imagen
+1. Crear el archivo .env.prod
+2. Llenar las variables de entorno de prod
+3. Crear la nueva imagen
 ```bash
 docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
 ```
+## Documnet
+Swagger:
+Esta aplicación esta corriendo en una instancia gratuita de AWS 
+en el siguiente link
+http://18.216.70.244:3000/api
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
