@@ -62,7 +62,20 @@ $ npm run test:cov
 
 ```bash
 $ docker-compose up -d
+```
 
+## Stack 
+-Mongo
+-Nest
+
+## Stack 
+## Production Build
+Crear el archivo .env.prod
+Llenar las variables de entorno de prod
+Crear la nueva imagen
+```bash
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
