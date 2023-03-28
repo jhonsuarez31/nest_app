@@ -6,7 +6,7 @@ services:
       - db
     build: 
       context: .
-      Dockerfile: Dockerfile
+      dockerfile: Dockerfile
     image: digiworld-docker
     container_name: digitalworldapp
     restart: always # reiniciar el contenedor si se detiene
